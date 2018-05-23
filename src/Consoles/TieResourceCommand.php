@@ -10,8 +10,8 @@ class TieResourceCommand extends BaseCommand
      * @var string
      */
     protected $signature = 'package:file {vendor}
-                            {--controller=} 
-                            {--command=} 
+                            {--controller=}
+                            {--command=}
                             {--events=}
                             {--facades=}
                             {--config=}
@@ -20,7 +20,7 @@ class TieResourceCommand extends BaseCommand
                             {--provider=}
                             {--routes=}
                             {--middleware=}
-                            {--class=} 
+                            {--class=}
                             {--exceptions=}
                             {--key=}
                             ';
@@ -103,6 +103,14 @@ class TieResourceCommand extends BaseCommand
     public function createStubFiles($configuration)
     {
         $stubPathLocation = $this->path . '/' . data_get($configuration, 'path', $configuration);
+
+        $stubPathLocation = str_replace([ 'VENDOR_NAME', 'VENDOR_NAME_LOWER', 'PACKAGE_NAME', 'PACKAGE_NAME_LOWER' ], [
+            studly_case($this->vendor),
+            strtolower($this->vendor),
+            studly_case($this->package),
+            strtolower($this->package),
+        ], $stubPathLocation);
+        
         $this->generateStubFile($stubPathLocation, $this->resourceName, $configuration);
         $this->comment("Successfully Create ".$this->resourceName." Resource");
         $this->comment("Path Location ".$stubPathLocation);
