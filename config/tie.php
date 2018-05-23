@@ -1,6 +1,6 @@
 <?php
 return [
-    'root'          => base_path('packages'), // Base directory
+    'root'          => base_path('vendor'), // Base directory
     'vendor'        => '', // Your github username. For Example 'vendor' => 'shipu'
     'rootNamespace' => '', // Root Namespace For Example: 'rootNamespace' => 'Shipu'
     /*
@@ -56,20 +56,20 @@ return [
             'views'      => 'src/Resources/views',
             'events'     => [
                 'namespace' => 'Events',
-                'path'      => 'src/Events',
+                'path'      => 'src/VENDOR_NAME/PACKAGE_NAME/Events',
             ],
             'jobs'       => [
                 'namespace' => 'Jobs',
-                'path'      => 'src/Jobs',
+                'path'      => 'src/VENDOR_NAME/PACKAGE_NAME/Jobs',
             ],
             'exceptions' => [
                 'namespace' => 'Exceptions',
                 'suffix'    => 'Exception',
-                'path'      => 'src/Exceptions',
+                'path'      => 'src/VENDOR_NAME/PACKAGE_NAME/Exceptions',
             ],
             'middleware' => [
                 'namespace' => 'Http\Middleware',
-                'path'      => 'src/Http/Middleware',
+                'path'      => 'src/VENDOR_NAME/PACKAGE_NAME/Http/Middleware',
             ],
             'provider'   => [
                 'namespace' => 'Providers',
@@ -82,12 +82,12 @@ return [
             'facades'    => [
                 'namespace' => 'Facades',
                 'suffix'    => 'Facades',
-                'path'      => 'src/Facades',
+                'path'      => 'src/VENDOR_NAME/PACKAGE_NAME/Facades',
             ],
             'controller' => [
                 'namespace' => 'Http\Controllers',
                 'suffix'    => 'Controller',
-                'path'      => 'src/Http/Controllers',
+                'path'      => 'src/VENDOR_NAME/PACKAGE_NAME/Http/Controllers',
                 'files'     => [
                     'PACKAGE_NAME',
                     'one',
@@ -102,7 +102,7 @@ return [
             ],
             'trait'      => [
                 'namespace' => 'Traits',
-                'path'      => 'src/Traits/',
+                'path'      => 'src/VENDOR_NAME/PACKAGE_NAME/Traits/',
                 'suffix'    => 'Trait',
                 'files'     => [
                     'PACKAGE_NAME.php',
@@ -111,7 +111,7 @@ return [
             'command'    => [
                 'namespace' => 'Consoles',
                 'suffix'    => 'Command',
-                'path'      => 'src/Consoles/',
+                'path'      => 'src/VENDOR_NAME/PACKAGE_NAME/Consoles/',
             ],
             'tests'      => 'tests/',
             'composer'   => [

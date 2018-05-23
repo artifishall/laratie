@@ -84,6 +84,14 @@ class TieCommand extends BaseCommand
     public function createStubFiles($configuration)
     {
         $stubPathLocation = $this->path . '/' . data_get($configuration, 'path', '');
+
+        $stubPathLocation = str_replace([ 'VENDOR_NAME', 'VENDOR_NAME_LOWER', 'PACKAGE_NAME', 'PACKAGE_NAME_LOWER' ], [
+            studly_case($this->vendor),
+            strtolower($this->vendor),
+            studly_case($this->package),
+            strtolower($this->package),
+        ], $stubPathLocation);
+        
         if (isset($configuration['files'])) {
             foreach ($configuration['files'] as $file) {
                 $this->generateStubFile($stubPathLocation, $file, $configuration);
