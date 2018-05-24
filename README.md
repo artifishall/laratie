@@ -5,9 +5,9 @@
 
 ### Features
 * Make package structure within a second
-* Adding package resource using command line 
-* Easy way to define your package custom structure 
-* Adding custom stubs facilities 
+* Adding package resource using command line
+* Easy way to define your package custom structure
+* Adding custom stubs facilities
 
 ### Installation
 Go to terminal and run this command
@@ -34,17 +34,17 @@ php artisan vendor:publish --tag=tie-config
 Go to terminal and run this command
 ```shell
 php artisan package:create vendor package_name
-or 
+or
 php artisan p:c vendor/package_name
-or 
+or
 php artisan p:c
 ```
-Then run `composer dump-autoload `; 
+Then run `composer dump-autoload `;
 ### Package Resources
 if you want to create your package resource then run below command:
 ```shell
 php artisan package:file vendor/package --stubkey=fileName
-or 
+or
 php artisan p:f vendor/package --stubkey=fileName
 ```
 Suppose you want make a controller for your package then:
@@ -53,8 +53,8 @@ php artisan package:file vendor/package --controller=TestController
 ```
 Available `stubKey` :
 ```
---controller 
---command 
+--controller
+--command
 --events
 --facades
 --config
@@ -63,14 +63,16 @@ Available `stubKey` :
 --provider
 --routes
 --middleware
---class 
+--model
+--class
 --exceptions
 --key
+--request
 ```
 If you have your own custom `stubKey` then you can choose `--key` for create package resource and value will be your stubKey.  
 
 ### Package Root Directory
-If you need to change your all packages root directory then Open `config/tie.php` and update `root` directory path. 
+If you need to change your all packages root directory then Open `config/tie.php` and update `root` directory path.
 ```
 'root'          => base_path('packages'), // Base directory
 ```
@@ -82,8 +84,8 @@ Open `config/tie.php` for setup your vendor name and rootNamespace. It's not men
 'rootNamespace' => '', // Root Namespace For Example: 'rootNamespace'   => 'Shipu'
 ```
 
-### Package Structure 
-Open `config/tie.php` for setup your own package structure. Available configuration: 
+### Package Structure
+Open `config/tie.php` for setup your own package structure. Available configuration:
 ```
 <?php
 return [
@@ -117,7 +119,7 @@ return [
 ```
 
 ### Package Stub configuration
-Open `config/tie.php` : 
+Open `config/tie.php` :
 ```
 <?php
 return [
