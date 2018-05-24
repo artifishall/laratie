@@ -112,6 +112,13 @@ return [
                     'PACKAGE_NAME.php',
                 ],
             ],
+            'model'      => [
+                'namespace' => 'Models',
+                'path'      => 'src/VENDOR_NAME/PACKAGE_NAME/Models/',
+                'files'     => [
+                    'PACKAGE_NAME.php',
+                ],
+            ],
             'command'    => [
                 'namespace' => 'Consoles',
                 'suffix'    => 'Command',
