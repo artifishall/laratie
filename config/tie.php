@@ -75,6 +75,10 @@ return [
                 'namespace' => 'Http\Middleware',
                 'path'      => 'src/VENDOR_NAME/PACKAGE_NAME/Http/Middleware',
             ],
+            'request' => [
+                'namespace' => 'Http\Request',
+                'path'      => 'src/VENDOR_NAME/PACKAGE_NAME/Http/Requests',
+            ],
             'provider'   => [
                 'namespace' => 'Providers',
                 'suffix'    => 'ServiceProvider',
