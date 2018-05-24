@@ -45,7 +45,11 @@ return [
 //            ],
 //             Example config end
             'src'        => 'src/',
-            'migration'  => 'migrations',
+            'migration'  => [
+                'prefix' => date('Y_m_d_His_'),
+                'path'  => 'src/database/migrations',
+                'case'  => 'lower',
+            ],
             'config'     => [
                 'path'  => 'config',
                 'case'  => 'lower',
@@ -53,7 +57,7 @@ return [
                     'config.php',
                 ],
             ],
-            'views'      => 'src/Resources/views',
+            'views'      => 'src/views',
             'events'     => [
                 'namespace' => 'Events',
                 'path'      => 'src/VENDOR_NAME/PACKAGE_NAME/Events',
@@ -74,7 +78,7 @@ return [
             'provider'   => [
                 'namespace' => 'Providers',
                 'suffix'    => 'ServiceProvider',
-                'path'      => 'src/Providers',
+                'path'      => 'src/VENDOR_NAME/PACKAGE_NAME/Providers',
                 'files'     => [
                     'PACKAGE_NAME.php',
                 ],
@@ -95,7 +99,7 @@ return [
                 ],
             ],
             'routes'     => [
-                'path'  => 'src/Routes/',
+                'path'  => 'src/routes/',
                 'files' => [
                     'routes.php',
                 ],

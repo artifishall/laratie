@@ -20,6 +20,7 @@ class TieResourceCommand extends BaseCommand
                             {--provider=}
                             {--routes=}
                             {--middleware=}
+                            {--model=}
                             {--class=}
                             {--exceptions=}
                             {--key=}
@@ -110,7 +111,7 @@ class TieResourceCommand extends BaseCommand
             studly_case($this->package),
             strtolower($this->package),
         ], $stubPathLocation);
-        
+
         $this->generateStubFile($stubPathLocation, $this->resourceName, $configuration);
         $this->comment("Successfully Create ".$this->resourceName." Resource");
         $this->comment("Path Location ".$stubPathLocation);

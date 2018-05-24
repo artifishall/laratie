@@ -30,21 +30,21 @@ abstract class BaseCommand extends Command
      * @var string
      */
     protected $path;
-    
+
     /**
      * Package Name.
      *
      * @var string
      */
     protected $package;
-    
+
     /**
      * Vendor Name.
      *
      * @var Filesystem
      */
     protected $vendor;
-    
+
     /**
      * Namespace for stub class.
      *
@@ -208,7 +208,7 @@ abstract class BaseCommand extends Command
             case 'kebab':
                 return kebab_case($name);
         }
-        
+
         return $name;
     }
 
@@ -241,14 +241,15 @@ abstract class BaseCommand extends Command
     protected function replaceStubString($className, $namespace)
     {
         return array_merge([
-            'VENDOR_NAME_LOWER'  => strtolower($this->vendor),
-            'VENDOR_NAME'        => studly_case($this->vendor),
-            'PACKAGE_NAME_LOWER' => strtolower($this->package),
-            'PACKAGE_NAME'       => studly_case($this->package),
-            'DummyClass'         => studly_case($className),
-            'DummyTarget'        => strtolower($className),
-            'DummyNamespace'     => $this->namespace . $namespace,
-            'DummyRootNamespace' => $this->laravel->getNamespace(),
+            '/VENDOR_NAME_LOWER/'  => strtolower($this->vendor),
+            '/VENDOR_NAME/'        => studly_case($this->vendor),
+            '/PACKAGE_NAME_LOWER/' => strtolower($this->package),
+            '/PACKAGE_NAME/'       => studly_case($this->package),
+            '/DummyClass/'         => studly_case($className),
+            '/DummyTarget/'        => strtolower($className),
+            '/DummyNamespace/'     => $this->namespace . $namespace,
+            '/DummyRootNamespace/' => $this->laravel->getNamespace(),
+            '/\d{14}/'             => ''
         ], $this->config->get('tie.stubs.replace'));
     }
 
@@ -264,7 +265,7 @@ abstract class BaseCommand extends Command
     {
         $file = base_path('composer.json');
         $data = json_decode($this->filesystem->get($file), true);
-        
+
         $rootStub = $this->config->get('tie.stubs.root');
         if(is_array($rootStub)) {
             $rootStub = data_get($this->config->get($rootStub), 'path',  '');

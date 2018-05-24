@@ -85,7 +85,7 @@ class Stub
     {
         $contents = file_get_contents($this->getPath());
 
-        return str_replace(
+        return preg_replace(
             array_keys($this->replaces), array_values($this->replaces), $contents
         );
     }
