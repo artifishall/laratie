@@ -25,6 +25,7 @@ class TieResourceCommand extends BaseCommand
                             {--exceptions=}
                             {--key=}
                             {--request=}
+                            {--trait=}
                             ';
 
     /**
